@@ -1,5 +1,8 @@
+/** @jsx jsx */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { css, jsx } from '@emotion/core';
+
 
 export default class extends Component {
   static propTypes = {
@@ -23,8 +26,18 @@ export default class extends Component {
 
   render() {
     const { comment } = this.state;
+    const commentBox = css`
+      label: comment-box;
+      border-top: 1px solid #efefef;
+      color: #999;
+      min-height: 56px;
+      display: flex;
+      align-items: center;
+      font-size: 0.9em;
+    `
+
     return (
-      <section className="comment-box">
+      <section css={commentBox}>
         <div className="comment-area">{comment === '' ? "コメントする" : comment}</div>
       </section>
     );

@@ -1,11 +1,21 @@
+/** @jsx jsx */
 import React from 'react';
 import PropTypes from 'prop-types';
 import Comment from './Comment';
+import { css, jsx } from '@emotion/core';
 
 const Comments = ({ data }) => {
   const { commentOne, commentTwo } = data;
+  const comments = css`
+    label: commnets;
+    margin-bottom: 4px;
+    & a {
+      margin-right: 0.3em;
+    }
+  `
+
   return (
-    <ul className="comments">
+    <ul css={comments}>
       <Comment
         username={commentOne.poster}
         comment={commentOne.body} />

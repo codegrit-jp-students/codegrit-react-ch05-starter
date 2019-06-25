@@ -1,15 +1,37 @@
+/** @jsx jsx */
 import React from 'react';
 import PropTypes from 'prop-types';
 import MainIcons from './MainIcons';
 import Comments from './Comments';
 import CommentBox from './CommentBox'
+import { css, jsx } from '@emotion/core';
+
+const cardMain = css`
+  label: card-main;
+  padding: 0 16px;
+`
+const postDate = css`
+  label: post-date;
+  margin-bottom: 4px;
+  font-size: 10px;
+  letter-spacing: 0.2px;
+  color: #999;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+`
+const likeCounts = css`
+  label: like-counts
+  font-weight: bold;
+  margin-bottom: 8px;
+`
+
 
 const BodyMain = ({ theme, chosenId, data }) => (
-  <section className="card-main">
+  <section css={cardMain}>
     <MainIcons theme={theme} />
-    <div className="card-like-counts">100 likes</div>
+    <div css={likeCounts}>100 likes</div>
     <Comments data={data} />
-    <div className="post-date">1日前</div>
+    <div css={postDate}>1日前</div>
     <CommentBox chosenId={chosenId} />
   </section>
 );
