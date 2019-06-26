@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Comment from './Comment';
 import { css, jsx } from '@emotion/core';
 
-const Comments = ({ data }) => {
+const Comments = ({ data , theme}) => {
   const { commentOne, commentTwo } = data;
   const comments = css`
     label: commnets;
@@ -18,10 +18,14 @@ const Comments = ({ data }) => {
     <ul css={comments}>
       <Comment
         username={commentOne.poster}
-        comment={commentOne.body} />
+        comment={commentOne.body} 
+        theme={theme}
+        />
       <Comment
         username={commentTwo.poster}
-        comment={commentTwo.body} />
+        comment={commentTwo.body} 
+        theme={theme}
+        />
     </ul>
   );
 };

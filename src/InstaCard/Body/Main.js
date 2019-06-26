@@ -30,7 +30,7 @@ const BodyMain = ({ theme, chosenId, data }) => (
   <section css={cardMain}>
     <MainIcons theme={theme} />
     <div css={likeCounts}>100 likes</div>
-    <Comments data={data} />
+    <Comments data={data} theme={theme}/>
     <div css={postDate}>1日前</div>
     <CommentBox chosenId={chosenId} />
   </section>
