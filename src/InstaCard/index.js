@@ -1,22 +1,62 @@
-import React, { Component } from 'react';
+/** @jsx jsx */
+import { Component } from 'react';
 import Header from './Header';
 import Body from './Body';
 import ThemeSwitcher from './ThemeSwitcher';
 import CardSwitcher from './CardSwitcher'
 import { ReactComponent as LoadingImg } from '../images/loading.svg';
 import { fetchData } from '../CardDataUtils';
+import { css, jsx } from '@emotion/core';
+import styled from '@emotion/styled'
+import '../index.scss';
+
+const Article = styled.article(
+  {
+    display: 'flex',
+    flexDirection: 'column',
+    maxWidth: '614px',
+    width: '100%',
+    border: '1px solid #e6e6e6',
+    borderRadius: '5px',
+  },
+  props => {
+    let styles = []
+    switch (props.type) {
+      case 'dark':
+        styles.push({ 
+          backgroundColor: '#262626',
+          color: '#999',
+        })
+        break;
+      default:
+        
+    }
+    return styles;
+  }
+)
+
+const loaderWrapperStyle =css`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+`
+
+const instaCard = css`
+  label: insta-card;
+  display: flex;
+  flex-direction: column;
+  max-width: 614px;
+  width: 100%;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+`
 
 const EmptyBox = () => {
-  const loaderWrapperStyle = {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '100%',
-    width: '100%',
-  }
   return (
-    <article className="insta-card" style={{ height: 600 }}>
-      <div style={loaderWrapperStyle}>
+    <article css={instaCard} style={{ height: 600 }}>
+      <div css={loaderWrapperStyle}>
         <LoadingImg />
       </div>
     </article>
@@ -67,19 +107,19 @@ export default class extends Component {
       chosenId, 
       loadedOnce 
     } = this.state;
-    let instaCardClass = "insta-card";
+    // let instaCardClass = "insta-card";
     let articlePart;
-    if (theme === 'dark') {
-      instaCardClass = "insta-card insta-card-dark"
-    }
+    // if (theme === 'dark') {
+    //   instaCardClass = "insta-card insta-card-dark"
+    // }
     if (loading && loadedOnce === false) {
       articlePart = <EmptyBox />;
     } else {
       articlePart = (
-        <article className={instaCardClass}>
+        <Article type={theme}>
           <Header theme={theme} data={data} />
           <Body theme={theme} data={data} chosenId={chosenId} />
-        </article>
+        </Article>
       );
     }
     return (
