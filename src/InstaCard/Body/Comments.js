@@ -1,12 +1,9 @@
 /** @jsx jsx */
-import React from 'react';
 import PropTypes from 'prop-types';
 import Comment from './Comment';
 import { css, jsx } from '@emotion/core';
 
-const Comments = ({ data , theme}) => {
-  const { commentOne, commentTwo } = data;
-  const comments = css`
+const comments = css`
     label: commnets;
     margin-bottom: 4px;
     & a {
@@ -14,6 +11,9 @@ const Comments = ({ data , theme}) => {
     }
   `
 
+const Comments = ({ data , theme}) => {
+  const { commentOne, commentTwo } = data;
+  
   return (
     <ul css={comments}>
       <Comment

@@ -1,21 +1,25 @@
-import React from 'react';
+/** @jsx jsx */
 import PropTypes from 'prop-types';
+import { jsx } from '@emotion/core';
+import { SwitcherA ,SwitcherUl} from '../styled/flexboxUtils'
 
 const ThemeSwitcher = ({ theme, switchTheme }) => (
-  <ul className="theme-swither">
+  <ul css={SwitcherUl}>
     <li>
-      <a 
-        className={theme === 'light' ? "chosen" : "default"}
+      <SwitcherA 
+        type={theme === 'light' ? "chosen" : "default"}
+        // className={theme === 'light' ? "chosen" : "default"}
         onClick={(e) => switchTheme('light', e)}>
         Light
-      </a>
+      </SwitcherA>
     </li>
     <li>
-      <a 
-        className={theme === 'dark' ? "chosen" : "default"}
+      <SwitcherA 
+        type={theme === 'dark' ? "chosen" : "default"}        
+        // className={theme === 'dark' ? "chosen" : "default"}
         onClick={(e) => switchTheme('dark', e)}>
         Dark
-      </a>
+      </SwitcherA>
     </li>
   </ul>
 );

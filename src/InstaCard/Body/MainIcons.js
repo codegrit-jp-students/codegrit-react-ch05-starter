@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import React from 'react';
 import PropTypes from 'prop-types';
 import HeartImg from '../../images/heart.png';
 import HeartImgDark from '../../images/heart-gray.png';
@@ -13,6 +12,7 @@ const flexContainer = css`
   label: flex-container;
   display: flex;
 `
+
 const cardMainIcons = css`
   label: card-main-icons;
   margin-top: 4px;
@@ -24,7 +24,6 @@ const cardMainIcons = css`
     margin-right: 5px;
   }
 `
-
 
 const MainIcons = ({ theme }) => (
   <div css={cardMainIcons}>

@@ -1,21 +1,25 @@
-import React from 'react';
+/** @jsx jsx */
 import PropTypes from 'prop-types';
+import { jsx } from '@emotion/core';
+import { SwitcherA, SwitcherUl } from '../styled/flexboxUtils'
 
 const CardSwitcher = ({ id, switchCard }) => (
-  <ul className="theme-swither">
+  <ul css={SwitcherUl}>
     <li>
-      <a
+      <SwitcherA
+        type={id === 1 ? "chosen" : "default"}
         className={id === 1 ? "chosen" : "default"}
         onClick={(e) => switchCard(1, e)}>
         1枚目
-      </a>
+      </SwitcherA>
     </li>
     <li>
-      <a
+      <SwitcherA
+        type={id === 2 ? "chosen" : "default"}
         className={id === 2 ? "chosen" : "default"}
         onClick={(e) => switchCard(2, e)}>
         2枚目
-      </a>
+      </SwitcherA>
     </li>
   </ul>
 );

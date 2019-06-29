@@ -35,27 +35,28 @@ const Article = styled.article(
   }
 )
 
-const EmptyBox = () => {
-  const loaderWrapperStyle = {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '100%',
-    width: '100%',
-  }
-  const instaCard = css`
-    label: insta-card;
-    display: flex;
-    flex-direction: column;
-    max-width: 614px;
-    width: 100%;
-    border: 1px solid #e6e6e6;
-    border-radius: 5px;
-  `
+const loaderWrapperStyle =css`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+`
 
+const instaCard = css`
+  label: insta-card;
+  display: flex;
+  flex-direction: column;
+  max-width: 614px;
+  width: 100%;
+  border: 1px solid #e6e6e6;
+  border-radius: 5px;
+`
+
+const EmptyBox = () => {
   return (
     <article css={instaCard} style={{ height: 600 }}>
-      <div style={loaderWrapperStyle}>
+      <div css={loaderWrapperStyle}>
         <LoadingImg />
       </div>
     </article>

@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import React from 'react';
 import PropTypes from 'prop-types';
 import MainIcons from './MainIcons';
 import Comments from './Comments';
@@ -10,6 +9,7 @@ const cardMain = css`
   label: card-main;
   padding: 0 16px;
 `
+
 const postDate = css`
   label: post-date;
   margin-bottom: 4px;
@@ -19,12 +19,12 @@ const postDate = css`
   margin-bottom: 5px;
   text-transform: uppercase;
 `
+
 const likeCounts = css`
   label: like-counts
   font-weight: bold;
   margin-bottom: 8px;
 `
-
 
 const BodyMain = ({ theme, chosenId, data }) => (
   <section css={cardMain}>

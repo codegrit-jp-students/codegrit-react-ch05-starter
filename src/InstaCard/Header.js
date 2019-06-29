@@ -1,9 +1,7 @@
 /** @jsx jsx */
-import React from 'react';
 import Avatar from '../images/avatar-one.png';
 import PropTypes from 'prop-types';
 import { css , jsx } from '@emotion/core';
-
 
 const cardHeader = css`
   label: card-header;

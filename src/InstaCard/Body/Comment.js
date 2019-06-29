@@ -1,7 +1,6 @@
 /** @jsx jsx */
-import React from 'react';
 import PropTypes from 'prop-types';
-import { css, jsx } from '@emotion/core';
+import { jsx } from '@emotion/core';
 import styled from '@emotion/styled';
 
 const CommentDiv = styled.a(
@@ -14,14 +13,12 @@ const CommentDiv = styled.a(
         })
         break;
       default:
-        
     }
     return styles;
   }
 )
 
-
-const Comment = ({ username, comment ,theme}) => (
+const Comment = ({ username, comment ,theme }) => (
   <li className="poster-comment">
     <CommentDiv className="commenter-name" type={theme}>
       {username}

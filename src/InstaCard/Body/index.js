@@ -1,5 +1,4 @@
 /** @jsx jsx */
-import React from 'react';
 import PropTypes from 'prop-types';
 import BodyMain from './Main';
 import MainImg from '../../images/image-one.jpg';
